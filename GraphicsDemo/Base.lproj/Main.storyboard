@@ -1,26 +1,93 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vNP-Sa-8DZ">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qP-V9-EO9">
+                                <rect key="frame" x="59" y="157" width="202" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="Bnt-cP-oqJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="feW-VH-MgR"/>
+                                </constraints>
+                                <state key="normal" title="直接在Layer上画图"/>
+                                <connections>
+                                    <action selector="drawInLayerWithAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RhX-IR-b7q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbE-Vh-YEd">
+                                <rect key="frame" x="59" y="362" width="202" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cyR-gQ-KpJ"/>
+                                    <constraint firstAttribute="width" constant="202" id="vwO-jf-ReC"/>
+                                </constraints>
+                                <state key="normal" title="使用CGContextRef画图"/>
+                                <connections>
+                                    <action selector="useCGContextRefDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qsL-x8-EsR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-jk-6aw">
+                                <rect key="frame" x="59" y="253" width="202" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="lDP-lN-DdQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="w8u-VJ-Ysq"/>
+                                </constraints>
+                                <state key="normal" title="使用UIBezierPath画图"/>
+                                <connections>
+                                    <action selector="useBezierPathDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hy4-VT-aGz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EbE-Vh-YEd" firstAttribute="top" secondItem="hK5-jk-6aw" secondAttribute="bottom" constant="79" id="6xw-hp-iw2"/>
+                            <constraint firstItem="EbE-Vh-YEd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BO5-kO-HKZ"/>
+                            <constraint firstItem="7qP-V9-EO9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FJx-ga-vij"/>
+                            <constraint firstItem="hK5-jk-6aw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FiR-Ke-aAm"/>
+                            <constraint firstItem="7qP-V9-EO9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="93" id="NBw-gd-DmI"/>
+                            <constraint firstItem="hK5-jk-6aw" firstAttribute="top" secondItem="7qP-V9-EO9" secondAttribute="bottom" constant="66" id="h6e-Wp-IPi"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="MJs-Mt-Xsg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1111.875" y="123.59154929577466"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vAT-f6-5qv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vNP-Sa-8DZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NcH-CK-xD2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0kW-Ga-m9p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FU5-fb-OgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114.375" y="123.59154929577466"/>
         </scene>
     </scenes>
 </document>
