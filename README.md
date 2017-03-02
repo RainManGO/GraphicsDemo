@@ -5,4 +5,5 @@ UIBezierPath  CAShapeLayer  CGContextRef 基本使用。
 
 # Example
 
-https://github.com/RainManGO/GraphicsDemo/blob/master/Untitled1.gif
+![image](https://github.com/RainManGO/GraphicsDemo/blob/master/Untitled1.gif)
+
